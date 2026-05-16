@@ -3,15 +3,12 @@
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
   border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Add this line */
-
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .activeLink {
-  border-bottom: 2px solid var(--mantine-color-blue-6);
-  color: var(--mantine-color-blue-6);
+  border-bottom: 2px solid var(--mantine-color-orange-6);
+  color: var(--mantine-color-orange-6);
 }
 
 .link {
@@ -25,12 +22,14 @@
   font-weight: 500;
   font-size: var(--mantine-font-size-sm);
 
-  @media (max-width: $mantine-breakpoint-sm) {
+  /* Fix 1: Use actual pixel value or Mantine var for breakpoint */
+  @media (max-width: 768px) {
     height: 42px;
     width: 100%;
   }
 
-  @mixin hover {
+  /* Fix 2: Replace @mixin hover with standard CSS nesting */
+  &:hover {
     background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
   }
 }
@@ -40,7 +39,8 @@
   padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
   border-radius: var(--mantine-radius-md);
 
-  @mixin hover {
+  /* Fix 3: Replace @mixin hover with standard CSS nesting */
+  &:hover {
     background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
   }
 }
